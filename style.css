@@ -1,0 +1,556 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-sarif;
+}
+/* --------------utility classes ---------- */
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background: #16a093;
+  color: #fff;
+}
+/* ---------------- navbar styling ------------- */
+/* -----------for desktop -------- */
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+.navbar {
+  box-shadow: 0px 5px 10px 0px#aaa;
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  color: #000;
+  opacity: 0.85;
+  z-index: 999;
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.menu-items {
+  order: 2;
+  display: flex;
+}
+.logo {
+  order: 1;
+  font-size: 3rem;
+}
+.menu-items li {
+  list-style: none;
+  margin: 1.5rem;
+  font-size: 1.8rem;
+}
+.menu-items li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.menu-items li a:hover {
+  color: #117964;
+}
+/* -------------showcase section styling ------------- */
+.showcase-area {
+  background: url(./images/header-image2.jpg);
+  height: 50vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.showcase-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-direction: column;
+  height: 100%;
+}
+.main-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+/* ---------------- about section styling ---------- */
+#about {
+  padding: 50px 0;
+  background: #f5f5f7;
+}
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+#about p {
+  font-size: 1.6rem;
+  color: #555;
+}
+#about h2 {
+  font-size: 3.2rem;
+}
+#about .small {
+  font-weight: 500;
+  color: #666;
+  font-size: 1.6rem;
+}
+.about-img {
+  flex: 1 1 400px;
+  padding: 30px;
+  transform: translatex(150%);
+  animation: about-img-animation 1s ease-in-out forwards;
+}
+@keyframes about-img-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+.about-text {
+  flex: 1 1 400px;
+  padding: 30px;
+  margin: auto;
+  transform: translatex(-150%);
+  animation: about-text-animation 1s ease-in-out forwards;
+}
+@keyframes about-text-animation {
+  100% {
+    transform: translate(0);
+  }
+}
+.about-img img {
+  display: block;
+  height: 400px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: right;
+  margin: auto;
+}
+/* ----------------- food type styling ----------------- */
+#food {
+  padding: 5rem 0 10rem 0;
+}
+#food h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+.food-container {
+  display: flex;
+  justify-content: space-between;
+}
+.food-container img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  object-fit: cover;
+  object-position: center;
+  max-height: 300px;
+}
+.img-container {
+  position: relative;
+  margin: 0 1rem;
+}
+.img-content {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0.1s;
+}
+.img-content h3 {
+  font-size: 3rem;
+  color: #fff;
+}
+.img-content a {
+  font-size: 1.2rem;
+}
+.img-container::after {
+  content: " ";
+  display: block;
+  opacity: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.871);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaley(0);
+  transform-origin: 100% 100%;
+  transition: all 0.3s ease-in-out;
+}
+.img-container:hover::after {
+  opacity: 1;
+  transform: scaley(1);
+}
+.img-container:hover .img-content {
+  opacity: 1;
+  top: 40%;
+}
+/* ---------------- food menu styling ------------ */
+.food-menu-heading {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+}
+.food-menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0px 30px 0px;
+}
+.food-menu-container img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.food-menu-item {
+  display: flex;
+  flex: 1 1 600px;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+}
+.food-description {
+  margin: auto 1.5rem;
+}
+.food-description p {
+  color: #555;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+.food-description .food-menu-title {
+  color: #555;
+  font-weight: 400;
+  font-size: 2.2rem;
+}
+.food-description .food-price {
+  color: #117964;
+  font-weight: 700;
+}
+/* -------------- testimonial styling ---------------- */
+#testimonial {
+  padding: 5rem 0rem;
+  background: rgb(240, 240, 240);
+}
+.testimonial-title {
+  text-align: center;
+  font-weight: 400;
+  color: #555;
+  font-size: 3rem;
+}
+.testimonial-container {
+  display: flex;
+  font-size: 1.6rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.testimonial-box .checked {
+  color: #ff9529;
+}
+.testimonial-box .testimonial-text {
+  margin: 1rem 0;
+  color: #444;
+}
+.testimonial-box {
+  text-align: center;
+  padding: 1rem;
+}
+.testimonial-image img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: auto;
+}
+/* ------------- contact styling ------------------ */
+#contact {
+  padding: 5rem 0;
+  background: rgb(226, 226, 226);
+}
+.contact-container {
+  display: flex;
+  background: #fff;
+}
+.contact-image {
+  width: 50%;
+}
+.contact-image img {
+  display: block;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+.contact-form {
+  margin: auto;
+  padding: 1rem;
+  width: 50%;
+}
+.contact-form input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-shadow: none;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.contact-form h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 1rem;
+}
+.contact-form a {
+  font-size: 1.12rem;
+}
+/* -------------footer styling --------------- */
+#footer h2 {
+  font-size: 2rem;
+  padding: 3rem;
+  color: #fff;
+  background: rgba(65, 65, 65);
+  text-align: center;
+  font-weight: 500;
+}
+/* ----------------------- media quiries -------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    opacity: 0.95;
+  }
+
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: block;
+  }
+
+  .navbar-container {
+    display: block;
+    position: relative;
+    height: 64px;
+  }
+
+  .navbar-container input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .navbar-container .hamburger-lines {
+    display: block;
+    height: 23px;
+    width: 35px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+  }
+
+  .navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navbar .menu-items {
+    padding-top: 100px;
+    background: #fff;
+    height: 100vh;
+    max-width: 300px;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-left: 50px;
+    transition: transform 0.5s ease-in-out;
+    box-shadow: 5px 0px 10px 0px #aaa;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(35deg);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+  }
+
+  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-35deg);
+  }
+
+  /* ......./ food /......... */
+
+  .food-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .food-type:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .food-type {
+    box-shadow: 5px 5px 10px 0 #aaa;
+  }
+
+  .img-container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 65%;
+  }
+
+  .navbar .menu-items li {
+    font-size: 1.6rem;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .food-menu-container img {
+    margin: auto;
+  }
+
+  .food-menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 90%;
+    margin: 3rem auto;
+  }
+
+  .logo {
+    position: absolute;
+    top: 06px;
+    right: 15px;
+    font-size: 3rem;
+  }
+
+  .navbar .menu-items li {
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .testimonial-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .img-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .img-container .btn {
+    font-size: 0.7rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .showcase-area {
+    height: 50vmax;
+  }
+}
